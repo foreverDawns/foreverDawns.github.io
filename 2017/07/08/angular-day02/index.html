@@ -3,14 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>angular day02 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="Angular 第二天作用域每一个控制器都拥有$scope，这个$scope可以看做是一个作用域，当前控制器中所有绑定的数据内容都会来这个$scope中进行查找 在模块控制的范围内，有一个全局作用域，$rootScope 控制器之间又可以进行嵌套，嵌套之后，作用域之间就形成了继承关系，其原理就是原型继承 继承关系指的就是，绑定数据在查找的时候，会现在当前控制器中进行查找，如果找到了就直接使用，如果">
+<meta name="keywords" content="日记,练习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angular day02">
+<meta property="og:url" content="http://yoursite.com/2017/07/08/angular-day02/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Angular 第二天作用域每一个控制器都拥有$scope，这个$scope可以看做是一个作用域，当前控制器中所有绑定的数据内容都会来这个$scope中进行查找 在模块控制的范围内，有一个全局作用域，$rootScope 控制器之间又可以进行嵌套，嵌套之后，作用域之间就形成了继承关系，其原理就是原型继承 继承关系指的就是，绑定数据在查找的时候，会现在当前控制器中进行查找，如果找到了就直接使用，如果">
+<meta property="og:updated_time" content="2017-07-08T13:52:07.869Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="angular day02">
+<meta name="twitter:description" content="Angular 第二天作用域每一个控制器都拥有$scope，这个$scope可以看做是一个作用域，当前控制器中所有绑定的数据内容都会来这个$scope中进行查找 在模块控制的范围内，有一个全局作用域，$rootScope 控制器之间又可以进行嵌套，嵌套之后，作用域之间就形成了继承关系，其原理就是原型继承 继承关系指的就是，绑定数据在查找的时候，会现在当前控制器中进行查找，如果找到了就直接使用，如果">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,9 +64,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-angular-day02" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-angular-day02" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/08/angular-day02/" class="article-date">
   <time datetime="2017-07-08T13:49:58.000Z" itemprop="datePublished">2017-07-08</time>
@@ -78,8 +81,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/08/angular-day02/">angular day02</a>
+    <h1 class="article-title" itemprop="name">
+      angular day02
     </h1>
   
 
@@ -152,180 +155,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-复习" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/07/07/复习/" class="article-date">
-  <time datetime="2017-07-07T02:43:32.049Z" itemprop="datePublished">2017-07-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/07/复习/" data-id="cj4vcnedm0000z8mhgirln7tu" class="article-share-link">Delen</a>
-      
-      
-    </footer>
-  </div>
+  
+    <a href="/2017/07/07/复习/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
   
 </article>
-
-
-  
-    <article id="post-总结" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/25/总结/" class="article-date">
-  <time datetime="2017-06-25T02:47:56.000Z" itemprop="datePublished">2017-06-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript/">javascript</a>►<a class="article-category-link" href="/categories/javascript/web/">web</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/25/总结/">总结</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="远程地址管理"><a href="#远程地址管理" class="headerlink" title="远程地址管理"></a>远程地址管理</h1><p>我们可以在每一个本地仓库中，将远程地址保存下来。</p>
-<p>保存的方式是键值对的形式， 也就是说保存的地址可以有一个别名，那么以后在使用这个地址的时候，直接使用别名即可。</p>
-<h2 id="如何保存一个远程地址"><a href="#如何保存一个远程地址" class="headerlink" title="如何保存一个远程地址"></a>如何保存一个远程地址</h2><p>git remote add 别名 远程地址</p>
-<h2 id="显示所有已经保存的地址"><a href="#显示所有已经保存的地址" class="headerlink" title="显示所有已经保存的地址"></a>显示所有已经保存的地址</h2><p>git remote</p>
-<h2 id="origin的说明"><a href="#origin的说明" class="headerlink" title="origin的说明"></a>origin的说明</h2><p>如果当前版本库，是通过git clone从远程仓库获取下来的，那么这个本地库会自动默认添加一个origin远程地址，指向就是git clone 命令后面的那个远程地址</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/25/总结/" data-id="cj4vcnega000az8mh3b299r37" class="article-share-link">Delen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日记/">日记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/练习/">练习</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-测试" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/25/测试/" class="article-date">
-  <time datetime="2017-06-25T02:14:42.000Z" itemprop="datePublished">2017-06-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/javasquript/">javasquript</a>►<a class="article-category-link" href="/categories/javasquript/md/">md</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/25/测试/">测试</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="远程仓库的概念"><a href="#远程仓库的概念" class="headerlink" title="远程仓库的概念"></a>远程仓库的概念</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>所有的程序员，都可以通过这个远程仓库来进行版本库的共享，达到所有人的代码一致的效果！</p>
-<h2 id="如何创建一个远程仓库"><a href="#如何创建一个远程仓库" class="headerlink" title="如何创建一个远程仓库"></a>如何创建一个远程仓库</h2><p>远程仓库是一个裸仓库</p>
-<p>如何初始化一个裸仓库<br>git init –bare</p>
-<p>平时初始化仓库的时候，直接使用git init，那么会在文件夹下创建一个.git文件夹来保存版本库信息</p>
-<p>但是使用git init –bare 的时候，仓库信息相关的所有的文件，都直接暴露在当前文件夹下，就相当于没有衣服，所以叫做裸仓库。</p>
-<p>裸仓库（远成仓库）中不进行任何的开发工作，他只是用来做版本库共享的！</p>
-<p>一般情况下远程仓库的文件夹名要用.git作为结尾</p>
-<h2 id="将本地仓库推送到远程仓库"><a href="#将本地仓库推送到远程仓库" class="headerlink" title="将本地仓库推送到远程仓库"></a>将本地仓库推送到远程仓库</h2><p>git push 远程仓库的地址 本地分支名称:远程分支名称</p>
-<p>如果本地分支名称和远程分支名称的名字一致，就可以直接写一个<br>举个例子： git push 远程仓库地址 master</p>
-<h2 id="如何将远程仓库获取到本地"><a href="#如何将远程仓库获取到本地" class="headerlink" title="如何将远程仓库获取到本地"></a>如何将远程仓库获取到本地</h2><p>git clone 远程仓库地址 本地文件夹名称</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/25/测试/" data-id="cj4vcneh3000hz8mh1e1b73n3" class="article-share-link">Delen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日记/">日记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/练习/">练习</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/06/25/hello-world/" class="article-date">
-  <time datetime="2017-06-25T01:48:12.688Z" itemprop="datePublished">2017-06-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/25/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/25/hello-world/" data-id="cj4vcnehv000oz8mhc26hac5q" class="article-share-link">Delen</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 </section>
         
