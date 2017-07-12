@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -60,6 +60,86 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-服务的创建" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/12/服务的创建/" class="article-date">
+  <time datetime="2017-07-12T12:58:56.000Z" itemprop="datePublished">2017-07-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/angular/">angular</a>►<a class="article-category-link" href="/categories/angular/web/">web</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/12/服务的创建/">服务的创建</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="服务的创建方式"><a href="#服务的创建方式" class="headerlink" title="服务的创建方式"></a>服务的创建方式</h2><ol>
+<li><p>service</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">模块对象</div><div class="line">	.service(<span class="string">"服务名"</span>, [<span class="string">"注入服务"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">注入的服务</span>)</span>&#123;</div><div class="line">		<span class="comment">//通过this给服务添加属性和方法，最终提供给调用服务的人使用</span></div><div class="line">		<span class="comment">//最终用户获取到的服务对象，其实就是使用本函数，构造出来</span></div><div class="line">		<span class="comment">//也就是说用new的方式创建出来的</span></div><div class="line">		<span class="keyword">this</span>.数据: 数据</div><div class="line">		<span class="keyword">this</span>.方法= <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">		&#125;</div><div class="line">	&#125;])</div></pre></td></tr></table></figure>
+</li>
+<li><p>factory</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">模块对象</div><div class="line">	.factory(<span class="string">"服务名"</span>, [<span class="string">"注入服务"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">注入的服务</span>)</span>&#123;</div><div class="line">		<span class="comment">//通过给obj对象添加属性和方法，最终提供给调用服务的人使用</span></div><div class="line">		<span class="comment">//最终用户获取到的服务对象，其实就是使用本函数，使用工厂模式创建的</span></div><div class="line">		<span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line">			数据: 数据,</div><div class="line">			方法: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> obj;</div><div class="line">	&#125;])</div></pre></td></tr></table></figure>
+</li>
+<li><p>value</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">模块名称</div><div class="line">	.value(<span class="string">"服务名称"</span>, &#123;<span class="comment">//最终提供服务的对象，就是本对象！&#125;)</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>constant</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">模块名称</div><div class="line">	.constant(<span class="string">"服务名称"</span>, &#123;<span class="comment">//最终提供服务的对象，就是本对象！&#125;)</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>provider</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">模块名称</div><div class="line">	.provider(<span class="string">"服务名称"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="comment">//这里可以声明一些变量，来保存服务的配置信息！</span></div><div class="line">		<span class="keyword">return</span> &#123;</div><div class="line">			<span class="comment">//这个对象其实就是在config方法中获取到的 服务Provider 对象</span></div><div class="line">			<span class="comment">//这个对象中必须包含一个$get方法</span></div><div class="line">			$get: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">				<span class="keyword">return</span> &#123;</div><div class="line">					<span class="comment">//这个对象就是最终的服务对象，用户所使用的服务就是本对象！</span></div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Dirty-Check-脏检查机制，ng双向数据绑定的原理"><a href="#Dirty-Check-脏检查机制，ng双向数据绑定的原理" class="headerlink" title="Dirty-Check 脏检查机制，ng双向数据绑定的原理"></a>Dirty-Check 脏检查机制，ng双向数据绑定的原理</h2><p>在angular初始化的时候，会先创建模块对象，初始化该模块，初始化模块的时候，会在该模块所管辖的view范围内，搜索所有的ng指令，找到指令之后，为每一个指令绑定一个$watcher,这个watcher会在数据或者dom元素发生改变的时候，被调用！</p>
+<p>每当有一个watcher被触发，那么就会开启一次新的$digest, $digest中，会对所有的$watcher，一次执行来检测是否有数据变化，如果有变换，会重新启动一次$digest, 依次循环，直到检测不到任何变化为止，最终开始更新dom操作！！9-</p>
+<p>$apply 其实就是将相应的操作做了一个包装，先执行只写操作，然后再去调用$digest开始在脏检查</p>
+<p>在angular中angular负责的所有的内容，都会默认的被$apply进行包裹，如果使用到了非angular控制的内容，比如setTimeout， 在这个里面的数据操作，将不会触发watcher，也就不会进行脏检查，所以，我们需要手动进行在脏检查</p>
+<ol>
+<li><p>调用$apply来执行数据操作</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$scope.$apply(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">//做需要的数据操作</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>做完数据操作之后，手动调用$digest方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//做完数据操作</span></div><div class="line">$scope.$digest();</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="angular-route"><a href="#angular-route" class="headerlink" title="angular-route"></a>angular-route</h2><p>使用步骤：555</p>
+<ol>
+<li>引入angular-route.js文件</li>
+<li>在使用该angular-route模块的模块中加入依赖项 ngRoute </li>
+<li>在模块的config方法中对angular-route进行配置 配置需要注入的内容为  $routeProvider</li>
+<li>使用when方法进行配置<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">angular</div><div class="line">	.module(<span class="string">"app"</span>, [<span class="string">"ngRoute"</span>])</div><div class="line">	.config([<span class="string">"$routeProvider"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$routeProvider</span>)</span>&#123;</div><div class="line">		$routeProvider.when(<span class="string">"hash路径匹配规则"</span>, &#123;</div><div class="line">			<span class="attr">template</span>: <span class="string">"视图html代码"</span>,  <span class="comment">//template属性和templateUrl只需要并且必须存在一个！</span></div><div class="line">			templateUrl: <span class="string">"视图路径"</span>,</div><div class="line">			<span class="attr">controller</span>: <span class="string">"控制器"</span></div><div class="line">		&#125;)</div><div class="line">		<span class="comment">//路由传参  在路由规则当中指定传参的形式，以及参数的名称</span></div><div class="line">		.when(<span class="string">"hash路径/:参数名称"</span>, &#123;</div><div class="line">			<span class="attr">template</span>: <span class="string">"视图html代码"</span>,  </div><div class="line">			<span class="attr">templateUrl</span>: <span class="string">"视图路径"</span>,</div><div class="line">			<span class="attr">controller</span>: <span class="string">"控制器"</span></div><div class="line">		&#125;)</div><div class="line">		.otherwise(&#123;</div><div class="line">			<span class="comment">//这里做的就是当所有的匹配规则都不满足的情况下做的事情</span></div><div class="line"></div><div class="line">			<span class="comment">//redierctTo：就是进行路径跳转的操作</span></div><div class="line">			redirectTo: <span class="string">"hash路径"</span></div><div class="line">		&#125;)</div><div class="line">	&#125;])</div><div class="line">	<span class="comment">//获取路由传进来的参数</span></div><div class="line">	.controller(<span class="string">"c1"</span>, [<span class="string">"$route"</span>, <span class="string">"$routeParams"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$route, $routeParams</span>)</span>&#123;</div><div class="line">		<span class="comment">//1. 通过$route服务获取</span></div><div class="line">		$route.current.pathParams;</div><div class="line">		<span class="comment">//1. 通过$routeParams服务获取</span></div><div class="line">		$routeParams;</div><div class="line">	&#125;])</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="更改哈希路径前的字符-感叹号这个东西是在1-6之后默认会加上的"><a href="#更改哈希路径前的字符-感叹号这个东西是在1-6之后默认会加上的" class="headerlink" title="更改哈希路径前的字符 #!/  感叹号这个东西是在1.6之后默认会加上的"></a>更改哈希路径前的字符 #!/  感叹号这个东西是在1.6之后默认会加上的</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.config([<span class="string">"$locationProvider"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$locationProvider</span>)</span>&#123;</div><div class="line">	<span class="comment">//hashPrefix可以更改上面那个感叹号， 如果不想要就给空字符串</span></div><div class="line">	$locationProvider.hashPrefix(<span class="string">""</span>);</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/07/12/服务的创建/" data-id="cj510jn6i000ahwmhig2293jg" class="article-share-link">Delen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日记/">日记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/练习/">练习</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="“angularw-angular-Day03" class="article article-type-“angularw" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -119,7 +199,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/10/angular-Day03/" data-id="cj4xhyzwa0001oomhfgt187gs" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/07/10/angular-Day03/" data-id="cj510jn4c0001hwmh1x4tjg3y" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日记/">日记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/练习/">练习</a></li></ul>
@@ -214,7 +294,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/08/angular-day02/" data-id="cj4xhyzwg0002oomhmj3x7w3v" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/07/08/angular-day02/" data-id="cj510jn74000jhwmh8dr1tau4" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日记/">日记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/练习/">练习</a></li></ul>
@@ -242,7 +322,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/07/07/复习/" data-id="cj4xhyzu20000oomh5rmc87z6" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/07/07/复习/" data-id="cj510jn3e0000hwmh75zk1ane" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -287,7 +367,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/25/总结/" data-id="cj4xhyzwt0005oomh0k868drk" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/25/总结/" data-id="cj510jn6o000bhwmhvx7glwq8" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日记/">日记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/练习/">练习</a></li></ul>
@@ -339,7 +419,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/25/测试/" data-id="cj4xhyzwv0006oomhzyhnvomu" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/25/测试/" data-id="cj510jn6w000ghwmho3v8tpp8" class="article-share-link">Delen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日记/">日记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/练习/">练习</a></li></ul>
@@ -386,7 +466,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/25/hello-world/" data-id="cj4xhyzwx0007oomhosgq84j9" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/25/hello-world/" data-id="cj510jn6s000dhwmhx1i19ogz" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -403,7 +483,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Catégories</h3>
+    <h3 class="widget-title">Categorieën</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/angular/">angular</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/angular/web/">web</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/web/">web</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/javasquript/">javasquript</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/javasquript/md/">md</a></li></ul></li></ul>
     </div>
@@ -413,7 +493,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Labels</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记/">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/练习/">练习</a></li></ul>
     </div>
@@ -423,7 +503,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/日记/" style="font-size: 10px;">日记</a> <a href="/tags/练习/" style="font-size: 10px;">练习</a>
     </div>
@@ -432,7 +512,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archieven</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li></ul>
     </div>
@@ -442,9 +522,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recente berichten</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/07/12/服务的创建/">服务的创建</a>
+          </li>
         
           <li>
             <a href="/2017/07/10/angular-Day03/">angular Day03</a>
@@ -462,10 +546,6 @@
             <a href="/2017/06/25/总结/">总结</a>
           </li>
         
-          <li>
-            <a href="/2017/06/25/测试/">测试</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -479,7 +559,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
